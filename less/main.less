@@ -1,0 +1,56 @@
+@import url('import/fonts.less');
+
+@white: #fff;
+@black: #000;
+
+.all-null() {
+    margin: 0;
+    padding: 0;
+}
+.font-param(@font-size, @font-weight, @line-height, @color, @transform) {
+    font-size: @font-size;
+    font-weight: @font-weight;
+    line-height: @line-height;
+    color: @color;
+    text-transform: @transform;
+}
+.bg-param(@bg-color, @bg-image, @bg-repeat, @bg-position) {
+    background: @bg-color @bg-image @bg-repeat @bg-position;
+}
+body {
+    font-family: "Lato","Arial",sans-serif;
+    .font-param(16px,400,30px,@black,none);
+    background-color: @white;
+    min-width: 320px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+a {
+    text-decoration: none;
+    .all-null();
+}
+ul {
+    list-style: none;
+    .all-null();
+}
+li, p {
+    .all-null();
+}
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.main-wrapper {
+    max-width: 1600px;
+    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    position: relative;
+}

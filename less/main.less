@@ -1,14 +1,22 @@
 @import url('import/fonts.less');
 @import url('import/material-icons.less');
+@import url('import/fontawesome.less');
 
 @white: #fff;
 @black: #000;
+@blue: #2095f2;
+@dark-blue: #2d3744;
+@grey: #f4f4f4;
+
+@raleway: "Raleway","Arial",sans-serif;
+@montserrat: "Montserrat","Arial",sans-serif;
 
 .all-null() {
     margin: 0;
     padding: 0;
 }
-.font-param(@font-size, @font-weight, @line-height, @color, @transform) {
+.font-param(@font-family, @font-size, @font-weight, @line-height, @color, @transform) {
+    font-family: @font-family;
     font-size: @font-size;
     font-weight: @font-weight;
     line-height: @line-height;
@@ -19,8 +27,7 @@
     background: @bg-color @bg-image @bg-repeat @bg-position;
 }
 body {
-    font-family: "Lato","Arial",sans-serif;
-    .font-param(16px,400,30px,@black,none);
+    .font-param(@raleway,14px,500,26px,@black,none);
     background-color: @white;
     min-width: 320px;
 }
@@ -50,29 +57,152 @@ li, p {
     overflow: hidden;
 }
 .main-wrapper {
-    max-width: 1600px;
+    max-width: 1920px;
     width: 100%;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
     position: relative;
 }
-
-
-
-
-
+.page-header {
+    background-color: @blue;
+    &__logo {
+        .font-param(@montserrat,36px,400,36px,@white,none);
+    }
+    &__h1 {
+        .font-param(@raleway,54px,300,64px,@white,none);
+    }
+    &__b {
+        font-weight: 700;
+    }
+    &__info {
+        .font-param(@raleway,18px,400,30px,@white,none);
+    }
+    &__nav-item a {
+        .font-param(@raleway,14px,600,42px,@white,none);
+    }
+    &__button-watch, &__button-download {
+        .font-param(@raleway,14px,600,72px,@white,none);
+    }
+}
+h2 {
+    .font-param(@raleway,36px,300,26px,@black,none);
+}
+h2 b {
+    font-weight: 600;
+}
+.about {
+    background-color: @grey;
+}
+.advantages__item {
+    .font-param(@raleway,16px,500,26px,@white,none);
+}
+h3 {
+    .font-param(@raleway,24px,500,26px,@black,none);
+}
+.how {
+    background-color: @dark-blue;
+    &__link {
+        .font-param(@raleway,30px,600,26px,@white,none);
+    }
+}
+.friendly, .friendly__header, .friendly__item {
+    color: @white;
+    background-color: @blue;
+}
+.app-status__number {
+    .font-param(@raleway,40px,500,45px,@black,none);
+}
+.app-status__name {
+    .font-param(@raleway,18px,400,45px,@black,none);
+}
+.team__header {
+    .font-param(@raleway,18px,600,26px,@black,none);
+}
+.team__description {
+    .font-param(@raleway,14px,400,26px,@black,none);
+}
+.feedback {
+    background-color: @blue;
+    &__header {
+        color: @white;
+    }
+    &__wrap {
+        background-color: @white;
+    }
+}
+.quotes__autor-1 {
+    .font-param(@raleway,18px,600,26px,@black,none);
+    span {
+        .font-param(@raleway,14px,400,26px,@black,none);
+    }
+}
+.plan__header {
+    .font-param(@raleway,30px,500,27px,@black,none);
+}
+.plan__price {
+    .font-param(@raleway,60px,300,36px,@black,none);
+}
+.plan__type {
+    .font-param(@raleway,14px,300,36px,@black,none);
+}
+.plan__button {
+    .font-param(@raleway,14px,600,36px,@black,none);
+}
+.questions {
+    background-color: @grey;
+}
 .hide-question, .hide-question + label + div {
-  display: none;
+    display: none;
 }
-.hide-question + label,
-.hide-question:checked + label {
-  cursor: pointer;
+.hide-question + label, .hide-question:checked + label {
+    cursor: pointer;
+    .font-param(@raleway,16px,600,26px,@white,none);
 }
-.hide-question + label:before,
-.hide-question:checked + label:before {
-  content: "";
-  display: block;
-
+.hide-question + label:before, .hide-question:checked + label:before {
+    content: "";
+    display: block;
 }
 .hide-question:checked + label + div {
-  display: block;
+    display: block;
+}
+.download {
+    background-color: @dark-blue;
+    &__header, &__info, button {
+        color: white;
+    }
+}
+.news {
+    &__type {
+        .font-param(@raleway,10px,500,27px,@white,none);
+    }
+    &__header {
+        .font-param(@raleway,18px,600,27px,@black,none);
+    }
+    &__cite-wrap {
+        .font-param(@raleway,12px,500,27px,@black,none);
+    }
+    &__by {
+        font-style: italic;
+        color: @blue;
+    }
+    &__date {
+        color: @black;
+    }
+    &__link {
+        .font-param(@raleway,14px,600,36px,@blue,none);
+    }
+}
+.subscribe {
+    background-color: @grey;
+}
+.subscribe-form__button {
+    .font-param(@raleway,14px,500,27px,@white,none);
+}
+.touch-link__address-descr, .touch-link__phone-descr, .touch-link__email-descr {
+    .font-param(@raleway,14px,300,26px,@white,none);
+}
+.touch-form__header {
+    font-weight: 400;
+    color: @white;
+}
+.touch-form__button {
+    .font-param(@raleway,14px,400,26px,@blue,none);
 }

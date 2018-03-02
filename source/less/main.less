@@ -601,42 +601,113 @@ label[for="screenshots__btn-3"] i {
   &__text-wrap {
     width: 57%;
     margin-left: auto;
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 183px;
     text-align: center;
   }
     &__header, &__icons-wrap .material-icons {
         color: @white;
-
     }
     &__quote-wrap {
+        box-sizing: border-box;
         background-color: @white;
-        .all-null();
+        min-height: 231px;
         margin-top: 55px;
-        margin-bottom: 35px;
         text-align: left;
-        padding: 35px 30px 35px 135px;
+        padding: 35px 35px 35px 135px;
 
     }
-  &__quote-item-1 {
-  .all-null();
-    padding-bottom: 35px;
-  }
-  &__quote-autor-1 {
-  .all-null();
+    &__quote-item {
+      padding-bottom: 35px;
+    }
+    &__quote-item::before {
+        content: "";
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        left: 6%;
+        top: 35%;
+        transform: translateY(-50%);
+    }
+    &__slide:first-child  &__quote-item::before {
+         .bg-param(transparent, url(../img/icon/feedback-avatar1.png),no-repeat,top left);
+    }
+     &__slide:nth-child(2)  &__quote-item::before {
+         .bg-param(transparent, url(../img/icon/feedback-avatar2.png),no-repeat,top left);
+    }
+      &__slide:last-child  &__quote-item::before {
+         .bg-param(transparent, url(../img/icon/feedback-avatar3.png),no-repeat,top left);
+    }
+    &__quote-autor {
+      .font-param(@raleway,18px,600,26px,@black,none);
+        span {
+      .font-param(@raleway,14px,400,26px,@black,none);      
+        }
+     }
+    &__quote-flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__stars {
+        display: flex;
+        justify-content: space-between;
+       i {
+        font-size: 18px;
+        color: @blue;
+        
+      }
+    }
+    /*слайдер 2*/
+&__slider {
+    position: relative;
+    
+}
+&__slider input[type=radio] {
+    position: absolute;
+    opacity: 0;
+}
 
-  }
+&__slider-controls label i {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 18px;
+    color: @white;
+}
+label[for="feedback__btn-1"] i {
+    top: 268px;
+    left: 288px;
+}
+label[for="feedback__btn-2"] i {
+    top: 268px;
+    left: 314px;
+}
+label[for="feedback__btn-3"] i {
+    top: 268px;
+    left: 342px;
+}
+#feedback__btn-1:checked ~ .feedback__slider-controls label[for="feedback__btn-1"] .btn-checked,
+ #feedback__btn-2:checked ~ .feedback__slider-controls label[for="feedback__btn-2"] .btn-checked,
+  #feedback__btn-3:checked ~  .feedback__slider-controls label[for="feedback__btn-3"] .btn-checked {
+    display: block;
 }
 
 
-
-
-
-.quotes__autor-1 {
-    .font-param(@raleway,18px,600,26px,@black,none);
-    span {
-        .font-param(@raleway,14px,400,26px,@black,none);
-    }
+&__slide,  .btn-checked {
+    display: none;
 }
+#feedback__btn-1:checked ~ .feedback__slides .feedback__slide:nth-child(1) {
+    display: block;
+}
+#feedback__btn-2:checked ~ .feedback__slides .feedback__slide:nth-child(2) {
+    display: block;
+}
+#feedback__btn-3:checked ~ .feedback__slides .feedback__slide:nth-child(3) {
+    display: block;
+ }
+}
+
+
 .plan__header {
     .font-param(@raleway,30px,500,27px,@black,none);
 }

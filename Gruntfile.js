@@ -40,13 +40,17 @@ module.exports = function(grunt) {
        }
      }
    },
-
     csscomb: {
-      style: {
-        expand: true,
-        src:["less/**/*.less"]
-      }
+        dist: {
+            options: {
+                config: '.csscomb.json'
+            },
+            files: {
+                'source/less/main.less': ['source/less/main.less']
+            }
+        }
     },
+   
 
     imagemin: {
      images:{

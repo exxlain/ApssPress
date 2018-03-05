@@ -550,44 +550,47 @@ div[class*="__icons-wrap"] {
     .all-null();
     padding: 20px 0 5px;
   }
-  &__button-wrap {
-    box-sizing: border-box;
+  .social-list--team {
     position: relative;
     width: 264px;
     height: 69px;
     bottom: 153px;
-    background-color: @blue;
     padding: 0 37px;
-    justify-content: space-between;
-    align-items: center;
     display: none;
   }
-  &__button-link {
-    position: relative;
-    z-index: 1000;
-    width: 41px;
-    height: 41px;
-    top: 0;
-    border-radius: 50%;
-    background-color: @white;
-  }
-  .team__item:hover .team__button-wrap, .team__item:focus .team__button-wrap {
+
+  .team__item:hover .social-list--team, .team__item:focus .social-list--team {
     display: flex;
   }
   .team__item:hover .team__item-wrap, .team__item:focus .team__item-wrap, .hide__team-button:checked + label .team__item-wrap {
     box-shadow: 0 5px 5px -3px rgba(0,0,0,0.15);
   }
-  .hide__team-button:checked + label + ul {
+  &__checkbox:checked + label + ul {
     display: flex;
   }
   &__item-header {
     .font-param(@raleway,18px,600,26px,@black,none);
   }
+  &__checkbox {
+    display: none;
+  }
 }
-.hide__team-button {
-  display: none;
+/*соцсети*/
+.social-list {
+  box-sizing: border-box;
+  background-color: @blue;
+  justify-content: space-between;
+  align-items: center;
 }
-
+.social-list__link {
+  position: relative;
+  z-index: 1000;
+  width: 41px;
+  height: 41px;
+  top: 0;
+  border-radius: 50%;
+  background-color: @white;
+}
 
 .feedback {
   background-color: @blue;
@@ -606,11 +609,11 @@ div[class*="__icons-wrap"] {
   &__header, &__icons-wrap .material-icons {
     color: @white;
   }
-  &__quote-wrap {
+  &__quote {
     box-sizing: border-box;
     background-color: @white;
     min-height: 231px;
-    margin-top: 55px;
+    margin: 55px 0 0 0;
     text-align: left;
     padding: 35px 35px 35px 135px;
   }
@@ -637,11 +640,12 @@ div[class*="__icons-wrap"] {
   }
   &__quote-autor {
     .font-param(@raleway,18px,600,26px,@black,none);
+    font-style: normal;
     span {
       .font-param(@raleway,14px,400,26px,@black,none);
     }
   }
-  &__quote-flex {
+  &__quote-wrap {
     display: flex;
     justify-content: space-between;
   }
@@ -716,18 +720,18 @@ div[class*="__icons-wrap"] {
 .questions {
   background-color: @grey;
 }
-.hide-question, .hide-question + label + div {
+.questions__checkbox, .questions__checkbox + label + div {
   display: none;
 }
-.hide-question + label, .hide-question:checked + label {
+.questions__checkbox + label, .questions__checkbox:checked + label {
   cursor: pointer;
   .font-param(@raleway,16px,600,26px,@white,none);
 }
-.hide-question + label:before, .hide-question:checked + label:before {
+.questions__checkbox + label:before, .questions__checkbox:checked + label:before {
   content: "";
   display: block;
 }
-.hide-question:checked + label + div {
+.questions__checkbox:checked + label + div {
   display: block;
 }
 .download {

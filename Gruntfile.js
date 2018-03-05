@@ -96,11 +96,24 @@ module.exports = function(grunt) {
     
     clean: {
       build: ["build"]
-    }
+    },
+    
+    prettify: {
+      options: {
+          indent: 2,
+          indent_char: ' ',
+          unformatted: ['a', 'sub', 'sup', 'b', 'i', 'u']
+       },
+      html: {
+         "source/index.html": ["source/index.html"]
+       } 
+   }    
+      
    
   });
 
    grunt.registerTask("build", [
+    "prettify",
     "clean",
     "copy",
     "less",

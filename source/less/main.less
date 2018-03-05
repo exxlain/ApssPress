@@ -688,8 +688,6 @@ div[class*="__icons-wrap"] {
   #feedback__btn-1:checked ~ .feedback__slider-controls label[for="feedback__btn-1"] .btn-checked, #feedback__btn-2:checked ~ .feedback__slider-controls label[for="feedback__btn-2"] .btn-checked, #feedback__btn-3:checked ~ .feedback__slider-controls label[for="feedback__btn-3"] .btn-checked {
     display: block;
   }
-
-
   &__slide, .btn-checked {
     display: none;
   }
@@ -704,19 +702,45 @@ div[class*="__icons-wrap"] {
   }
 }
 
-
-.plan__header {
-  .font-param(@raleway,30px,500,27px,@black,none);
-}
-.plan__price {
+.plan {
+  padding-bottom: 130px;
+  &__wrap {
+    width: 1140px;
+    margin: 0 auto;
+    ul {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__header {
+    .all-null;
+    padding: 128px 0 25px;
+    text-align: center;
+  }
+  &__description {
+    padding: 28px 20% 97px;
+    text-align: center;
+  }
+  &__item {
+        
+    }
+    &__feature-list {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+    }
+  &__price {
   .font-param(@raleway,60px,300,36px,@black,none);
-}
-.plan__type {
+  }
+&__type {
   .font-param(@raleway,14px,300,36px,@black,none);
-}
-.plan__button {
+  }
+&__button {
   .font-param(@raleway,14px,600,36px,@black,none);
+  }  
 }
+
+
 .questions {
   background-color: @grey;
 }

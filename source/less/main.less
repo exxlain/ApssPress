@@ -6,6 +6,8 @@
 @blue: #2095f2;
 @light-blue: #98cbf2;
 @dark-blue: #2d3744;
+@purple: #5856d6;
+@green: #1cb710;
 @grey: #f4f4f4;
 @dark-grey: #f4f3f3;
 @grey-medium: #e7e7e7;
@@ -897,16 +899,70 @@ div[class*="__icons-wrap"] {
     left: -30px;
   }
 }
-
-
-
-
 .news {
-  &__type {
-    .font-param(@raleway,10px,500,27px,@white,none);
+  &__wrap {
+    width: 1140px;
+    margin: 0 auto 131px;
   }
   &__header {
+    .all-null;
+    padding: 170px 0 25px;
+    text-align: center;
+  }
+  &__description {
+    padding: 24px 20% 62px;
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 31.4%;
+    text-align: left;
+    padding-top: 271px;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.15);
+  }
+  &__text-wrap {
+    padding: 0 24px;
+    margin-bottom: 30px;
+  }
+  &__item:first-child {
+    .bg-param(@white, url(../img/bg/news-1.jpg),no-repeat,top center);
+  }
+  &__item:nth-child(2) {
+    .bg-param(@white, url(../img/bg/news-2.jpg),no-repeat,top center);
+  }
+  &__item:last-child {
+    .bg-param(@white, url(../img/bg/news-3.jpg),no-repeat,top center);
+  }
+  &__item:hover, .news__item--active {
+    box-shadow: 0 7px 5px -3px rgba(0,0,0,0.15);
+  }
+  &__item:hover .news__link, .news__link--active {
+    background-color: @blue;
+    color: @white;
+  }
+
+  &__item-type {
+    .font-param(@raleway,10px,500,20px,@white,none);
+    box-sizing: border-box;
+    width: 23%;
+    padding: 0 9px;
+  }
+  &__item:first-child .news__item-type {
+    background-color: @blue;
+  }
+  &__item:nth-child(2) .news__item-type {
+    background-color: @purple;
+  }
+  &__item:last-child .news__item-type {
+    background-color: @green;
+  }
+  &__item-header {
     .font-param(@raleway,18px,600,27px,@black,none);
+    .all-null();
+    padding-top: 10px;
   }
   &__cite-wrap {
     .font-param(@raleway,12px,500,27px,@black,none);
@@ -918,10 +974,21 @@ div[class*="__icons-wrap"] {
   &__date {
     color: @black;
   }
+  &__quote-item {
+    .all-null();
+    padding-top: 10px;
+    padding-bottom: 25px;
+  }
   &__link {
     .font-param(@raleway,14px,600,36px,@blue,none);
+    .button-param(10px, 10px, 17px, 17px, @white);
   }
 }
+
+
+
+
+
 .subscribe {
   background-color: @grey;
 }

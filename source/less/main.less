@@ -9,6 +9,7 @@
 @grey: #f4f4f4;
 @dark-grey: #f4f3f3;
 @grey-medium: #e7e7e7;
+@pale-grey: #fdfdfd;
 @raleway: "Raleway","Arial",sans-serif;
 @montserrat: "Montserrat","Arial",sans-serif;
 .all-null() {
@@ -776,21 +777,83 @@ div[class*="__icons-wrap"] {
 
 .questions {
   background-color: @grey;
+  &__wrap {
+    .bg-param(@grey,url(../img/bg/questions-bg.png),no-repeat,95% 70px);
+    width: 1140px;
+    margin: 0 auto;
+    margin-bottom: 65px;
+    min-height: 773px;
+  }
+  &__header {
+    .all-null;
+    padding: 128px 0 25px;
+    text-align: left;
+  }
+  div.questions__icons-wrap--left {
+    text-align: left;
+  }
+  &__description {
+    padding: 30px 0 46px;
+    width: 50%;
+    text-align: left;
+  }
+  &__list-wrap {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__list-descr {
+    width: 90%;
+    padding: 23px 20px;
+    background-color: @pale-grey;
+  }
+
+  /*стрелки*/
+  &__checkbox + label {
+    position: relative;
+  }
+  &__arrow-down, &__arrow-up {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 1px solid @white;
+    background-color: @white;
+    top: 9px;
+    right: 22px;
+    color: @blue;
+  }
+  &__arrow-down {
+    display: none;
+  }
+  &__arrow-up {
+    background-color: @blue;
+    color: @white;
+  }
+  &__checkbox:checked + label .questions__arrow-down {
+    display: block;
+  }
+  &__checkbox:checked + label .questions__arrow-up {
+    display: none;
+  }
+  /*открывающиеся блоки*/
+  &__checkbox, &__checkbox + label + div {
+    display: none;
+  }
+  &__checkbox + label, &__checkbox:checked + label {
+    cursor: pointer;
+    .font-param(@raleway,16px,600,26px,@white,none);
+    background-color: @blue;
+    width: 90%;
+    padding: 12px 20px;
+    margin-top: 13px;
+  }
+  &__checkbox:checked + label + div {
+    display: block;
+  }
 }
-.questions__checkbox, .questions__checkbox + label + div {
-  display: none;
-}
-.questions__checkbox + label, .questions__checkbox:checked + label {
-  cursor: pointer;
-  .font-param(@raleway,16px,600,26px,@white,none);
-}
-.questions__checkbox + label:before, .questions__checkbox:checked + label:before {
-  content: "";
-  display: block;
-}
-.questions__checkbox:checked + label + div {
-  display: block;
-}
+
+
 .download {
   background-color: @dark-blue;
   &__header, &__info, button {

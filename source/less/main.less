@@ -781,8 +781,7 @@ div[class*="__icons-wrap"] {
     .bg-param(@grey,url(../img/bg/questions-bg.png),no-repeat,95% 70px);
     width: 1140px;
     margin: 0 auto;
-    margin-bottom: 65px;
-    min-height: 773px;
+    min-height: 770px;
   }
   &__header {
     .all-null;
@@ -853,13 +852,55 @@ div[class*="__icons-wrap"] {
   }
 }
 
-
 .download {
-  background-color: @dark-blue;
-  &__header, &__info, button {
+  .bg-param(@dark-blue, url(../img/bg/download-bg.jpg),no-repeat,center center);
+  &__wrap {
+    width: 945px;
+    margin: 0 auto;
+    margin-bottom: 65px;
+  }
+  &__header {
+    .all-null;
+    color: white;
+    padding: 128px 0 25px;
+    text-align: center;
+  }
+  &__icons-wrap .material-icons {
+    color: @white;
+  }
+  &__description {
+    padding: 28px 15% 60px;
+    text-align: center;
     color: white;
   }
+  &__item {
+    width: 50%;
+  }
+  &__button-wrap {
+    text-align: center;
+    padding-bottom: 170px;
+    position: relative;
+  }
+  &__button {
+    .font-param(@raleway,14px,500,0,@white,none);
+    .button-param(27px, 27px, 45px, 45px, @blue);
+    border: none;
+    margin-right: 30px;
+  }
+  &__button-wrap::after {
+    content: " ";
+    .bg-param(transparent, url(../img/bg/download-bg-phone.png),no-repeat,center center);
+    position: absolute;
+    width: 1003px;
+    height: 259px;
+    top: 110px;
+    left: -30px;
+  }
 }
+
+
+
+
 .news {
   &__type {
     .font-param(@raleway,10px,500,27px,@white,none);

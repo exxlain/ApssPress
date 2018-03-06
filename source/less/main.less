@@ -8,6 +8,7 @@
 @dark-blue: #2d3744;
 @grey: #f4f4f4;
 @dark-grey: #f4f3f3;
+@grey-medium: #e7e7e7;
 @raleway: "Raleway","Arial",sans-serif;
 @montserrat: "Montserrat","Arial",sans-serif;
 .all-null() {
@@ -25,9 +26,11 @@
 .bg-param(@bg-color, @bg-image, @bg-repeat, @bg-position) {
   background: @bg-color @bg-image @bg-repeat @bg-position;
 }
-.button-param( @border, @padding, @bg-color, @radius) {
-  border: @border;
-  padding-right: @padding;
+.button-param( @padding-top, @padding-bottom, @padding-right, @padding-left, @bg-color, @radius: 30px) {
+  padding-top: @padding-top;
+  padding-bottom: @padding-bottom;
+  padding-right: @padding-right;
+  padding-left: @padding-left;
   background-color: @bg-color;
   border-radius: @radius;
 }
@@ -118,7 +121,7 @@ div[class*="__icons-wrap"] {
   }
   &__info {
     .font-param(@raleway,18px,400,30px,@white,none);
-    padding: 23px 40%52px 0;
+    padding: 23px 40% 52px 0;
   }
   &__nav-item a {
     .font-param(@raleway,14px,600,14px,@white,none);
@@ -126,10 +129,8 @@ div[class*="__icons-wrap"] {
   &__button-watch {
     .font-param(@raleway,14px,600,0,@blue,none);
     .all-null();
+    .button-param(16px, 16px, 30px, 30px, @white);
     border: none;
-    padding: 16px 30px;
-    background-color: @white;
-    border-radius: 30px;
     margin-right: 2%;
   }
   &__video-icon {
@@ -138,10 +139,8 @@ div[class*="__icons-wrap"] {
   }
   &__button-download {
     .font-param(@raleway,14px,600,0,@white,none);
+    .button-param(27px, 27px, 30px, 30px, @blue);
     border: 1px solid @white;
-    padding: 27px 30px;
-    background-color: @blue;
-    border-radius: 30px;
     margin-bottom: 236px;
   }
   &__os {
@@ -718,26 +717,60 @@ div[class*="__icons-wrap"] {
     text-align: center;
   }
   &__description {
-    padding: 28px 20% 97px;
+    padding: 28px 20% 80px;
     text-align: center;
   }
   &__item {
-        
+    width: 31.6%;
+    text-align: center;
+    box-shadow: 0 7px 5px -3px rgba(0,0,0,0.15),
+    0 0 2px 0 rgba(0,0,0,0.15);
+  }
+  &__item:hover .plan__item-header, &__item:hover .plan__button, .plan__item-header--active {
+    background-color: @blue;
+    color: @white;
+  }
+
+  &__item-header {
+    .font-param(@raleway,30px,500,27px,@black,none);
+    background-color: @dark-grey;
+    margin: 0;
+    padding: 26px 0;
+  }
+  &__feature-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 45px;
+    padding-bottom: 25px;
+    li {
+      padding-bottom: 10px;
     }
-    &__feature-list {
-     display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-    }
+  }
+  &__line {
+    width: 50.6%;
+    border: 0;
+    border-top: 1px solid @grey-medium;
+    padding-bottom: 37px;
+  }
   &__price {
-  .font-param(@raleway,60px,300,36px,@black,none);
+    .font-param(@raleway,60px,300,36px,@black,none);
+    sup {
+      font-size: 24px;
+    }
   }
-&__type {
-  .font-param(@raleway,14px,300,36px,@black,none);
+  &__type {
+    .font-param(@raleway,14px,300,36px,@black,none);
+    padding-top: 20px;
+    padding-bottom: 40px;
   }
-&__button {
-  .font-param(@raleway,14px,600,36px,@black,none);
-  }  
+  &__button {
+    .font-param(@raleway,14px,600,36px,@black,none);
+    .all-null();
+    .button-param(8px, 8px, 30px, 30px, @white);
+    border: 1px solid @grey-medium;
+    margin-bottom: 50px;
+  }
 }
 
 

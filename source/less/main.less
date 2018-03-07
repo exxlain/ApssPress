@@ -987,14 +987,59 @@ div[class*="__icons-wrap"] {
 
 
 
-
-
 .subscribe {
   background-color: @grey;
+  &__wrap {
+    width: 1140px;
+    margin: 0 auto;
+  }
+  &__header {
+    .all-null;
+    padding: 130px 0 25px;
+    text-align: center;
+  }
+  &__description {
+    padding: 26px 20% 70px;
+    text-align: center;
+  }
+  &__form {
+    text-align: center;
+    position: relative;
+    padding-bottom: 130px;
+  }
+  &__email {
+    width: 42%;
+    font-size: 14px;
+    padding: 23px 20px 23px 50px;
+    border: none;
+    background: @white;
+    border-radius: 30px;
+  }
+  &__mail {
+    position: absolute;
+    color: @blue;
+    font-size: 18px;
+    top: 22px;
+    left: 316px;
+  }
+  &__keyboard {
+    transform: scale(-1, 1);
+    vertical-align: bottom;
+  }
+  &__button {
+    position: absolute;
+    top: 0;
+    right: 295px;
+    .font-param(@raleway,14px,500,27px,@white,none);
+    .button-param(18px, 18px, 20px, 20px, @blue);
+    border: none;
+  }
 }
-.subscribe-form__button {
-  .font-param(@raleway,14px,500,27px,@white,none);
-}
+
+
+
+
+
 .touch-link__address-descr, .touch-link__phone-descr, .touch-link__email-descr {
   .font-param(@raleway,14px,300,26px,@white,none);
 }
